@@ -5,17 +5,28 @@
 	elementFormDefault="qualified">
 	<element name="BanqueService">
 		<complexType>
-			<sequence>
-				<element name="conversion" type="tns:convesion"></element>
+		<sequence>
+				<element name="conversion" type="tns:conversionType"></element>
+				<element name="getComptes" type="tns:compte" minOccurs="1" maxOccurs="unbounded">
+				
+				</element>
+				<element name="getCompte" type="tns:compte">
+				
+				</element>
 			</sequence>
 		</complexType>
 		</element>
-		<complexType name="convesion">
+		<complexType name="conversionType">
 			<sequence>
 				<element name="montant" type="double"></element>
 			</sequence>
 		</complexType>
-
-
+		<complexType name="compte">
+		<sequence>
+			<element name="solde" type="double"></element>
+			<element name="code" type="integer"></element>
+			
+			<element name="dataCreation" type="date"></element>
+		</sequence>
+	</complexType>
 </schema>
-
